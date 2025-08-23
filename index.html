@@ -143,6 +143,31 @@ footer a{color:#e2e8f0;}
   .foot{grid-template-columns:1fr}
 }
 
+/* NOTÍCIAS */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
+}
+.news-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  transition:.3s ease;
+}
+.news-card:hover{transform:translateY(-6px);}
+.news-card img{width:100%;height:200px;object-fit:cover;}
+.news-content{padding:18px;flex:1;display:flex;flex-direction:column;}
+.news-date{font-size:14px;color:var(--muted);margin-bottom:6px;display:block;}
+.news-card h3{font-size:18px;margin:0 0 10px;}
+.news-card p{flex:1;color:var(--muted);font-size:15px;margin-bottom:12px;}
+.news-card .btn{align-self:flex-start;}
+
+
 </style>  
 </head>
 <body>
@@ -158,7 +183,8 @@ footer a{color:#e2e8f0;}
       <a href="#inicio">Início</a>
       <a href="#consultas">Consultas</a>
       <a href="#duvidas">Dúvidas</a>
-      <a href="#contato">Contato</a>
+      <a href="#contato">Cadastro</a>
+      <a href="#noticias">Notícia</a>
     </nav>
     <div class="nav-cta">
       <a class="btn outline" href="https://wa.me/5511916217506" target="_blank" rel="noopener">Comprar Créditos</a>
@@ -183,6 +209,7 @@ footer a{color:#e2e8f0;}
     </div>
   </div>
 </section>
+
 
 <!-- BENEFÍCIOS -->
 <section class="benefits">
@@ -223,7 +250,7 @@ footer a{color:#e2e8f0;}
 
     <!-- Cards -->
     <div class="cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
-      <!-- PF -->
+      <!-- PF CREDITO SE-->
       <div class="card pf">
         <h3>ZENO BVS SIMPLES - PF</h3>
         <p>Consulta simplificada do perfil financeiro no BVS para avaliação rápida de crédito com informações essenciais e confiáveis.</p>
@@ -245,13 +272,13 @@ footer a{color:#e2e8f0;}
       <div class="card pf">
         <h3>ZENO CRÉDITO - PJ</h3>
         <p>Análise completa do perfil financeiro empresarial para facilitar decisões de crédito com dados confiáveis e atualizados.</p>
-        <span class="price-tag">R$ 14,99</span>
+        <span class="price-tag">R$ 5,09</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
       <div class="card pf">
         <h3>COMPLETA + SCORE - PJ</h3>
         <p>Retorna dados detalhados do CPF, incluindo pendências, histórico e restrições.</p>
-        <span class="price-tag">R$ 3,00</span>
+        <span class="price-tag">R$ 4,99</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
       <div class="card pf">
@@ -319,6 +346,12 @@ footer a{color:#e2e8f0;}
 
       <!-- CP Veicular -->
       <div class="card cp">
+        <h3>CNH NACIONAL POR CPF</h3>
+        <p>Consulta da Carteira Nacional de Habilitação vinculada ao CPF, com informações atualizadas sobre habilitação, pontos, validade e restrições.</p>
+        <span class="price-tag">R$ 8,40</span>
+        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
+      </div>
+      <div class="card cp">
         <h3>FICHA TÈCNICA</h3>
         <p>Informações detalhadas sobre especificações do veículo, como motor, potência, dimensões, peso e equipamentos de fábrica.</p>
         <span class="price-tag">R$ 4,80</span>
@@ -326,7 +359,7 @@ footer a{color:#e2e8f0;}
       </div>
       <div class="card cp">
         <h3>HISTÓRICO DE ROUBO E FURTO</h3>
-        <p>vConsulta que verifica registros oficiais de ocorrência de roubo ou furto do veículo.</p>
+        <p>Consulta que verifica registros oficiais de ocorrência de roubo ou furto do veículo.</p>
         <span class="price-tag">R$ 4,87</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
@@ -362,7 +395,7 @@ footer a{color:#e2e8f0;}
       </div>
       <div class="card cp">
         <h3>RECALL</h3>
-        <p>nforma se o veículo possui campanhas de recall pendentes, convocando o proprietário para correções de defeitos de fábrica identificados pela montadora.</p>
+        <p>informa se o veículo possui campanhas de recall pendentes, convocando o proprietário para correções de defeitos de fábrica identificados pela montadora.</p>
         <span class="price-tag">R$ 1,89</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
@@ -374,7 +407,7 @@ footer a{color:#e2e8f0;}
       </div>
       <div class="card cp">
         <h3>BÁSICA VEÍCULAR</h3>
-        <p>Conjunto de informações dos veículos registradas nos Detrans de cada estado, incluindo situação administrativa, débitos, restrições e licenciamento local. Certificado de segurança veicular RENAJUD RENAINF RICALL BIN</p>
+        <p>Conjunto de informações dos veículos registradas nos Detrans de cada estado, incluindo situação administrativa, débitos, restrições e licenciamento local. Certificado de segurança veicular RENAJUD RENAINF RECALL BIN</p>
         <span class="price-tag">R$ 9,79</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
@@ -563,6 +596,48 @@ footer a{color:#e2e8f0;}
         <p>Acesse sua conta e utilize o sistema quando precisar.</p>
         <a class="btn outline" target="_blank" rel="noopener" href="https://app.zenobrasil.com.br/">Acessar sistema</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTÍCIAS -->
+<section id="noticias" class="section">
+  <div class="container">
+    <div class="head">
+      <h2>Últimas Notícias</h2>
+      <a class="btn primary" href="noticias.html" target="_blank" rel="noopener">Todas as Notícias</a>
+    </div>
+
+    <div class="news-grid">
+      <article class="news-card">
+        <img src="img/banner-noticias-INICIAL.jpg" alt="Notícia 1">
+        <div class="news-content">
+          <span class="news-date">20 Ago 2025</span>
+          <h3>Nova atualização na API da Zeno</h3>
+          <p> A ZenoBrasil acaba de disponibilizar uma nova atualização em sua API, desenvolvida para tornar...</p>
+          <a href="noticias.html" class="btn outline">Ler mais</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="img/banner-noticias-INICIAL.jpg" alt="Notícia 1">
+        <div class="news-content">
+          <span class="news-date">15 Ago 2025</span>
+          <h3>Relatório aponta crescimento no uso de consultas veiculares</h3>
+          <p>As consultas veiculares tiveram um aumento de 30% no último semestre, refletindo maior demanda no setor.</p>
+          <a href="noticias.html" class="btn outline">Ler mais</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="img/banner-noticias-INICIAL.jpg" alt="Notícia 1">
+        <div class="news-content">
+          <span class="news-date">10 Ago 2025</span>
+          <h3>Segurança digital em destaque</h3>
+          <p>Especialistas apontam a importância de sistemas de consulta confiáveis para proteção de dados sensíveis.</p>
+          <a href="noticias.html" class="btn outline">Ler mais</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
