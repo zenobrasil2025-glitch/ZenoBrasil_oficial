@@ -112,6 +112,9 @@ body.menu-open .nav-overlay{opacity:1; visibility:visible; pointer-events:auto;}
 .price-tag{display:inline-flex;align-items:center;gap:8px;background:#f0faff;border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-weight:700;margin-top:10px;}
 .card .btn{margin-top:10px;}
 
+/* Cardspreminun */
+.cardpremiun{background:#cb0505;border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow);}
+
 /* COMO FUNCIONA */
 .subhead{font-weight:800;font-size:20px;margin-top:26px;display:flex;align-items:center;gap:8px;}
 .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));}
@@ -195,7 +198,28 @@ footer a{color:#e2e8f0;}
 .news-card p{flex:1;color:var(--muted);font-size:15px;margin-bottom:12px;}
 .news-card .btn{align-self:flex-start;}
 
+.card.destaque {
+  background-color: #f5f5f5; /* cor de fundo */
+  border: 2px solid #00ff77; /* borda de destaque */
+  position: relative; /* importante para posicionar o selo */
+  padding: 16px;
+}
 
+
+/* Selo dourado */
+.selo-premium {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(135deg, #0066cc, #00cc66); /* degradê dourado */
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 50px; /* deixa arredondado */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 12px;
+  text-transform: uppercase;
+}
 </style>  
 </head>
 <body>
@@ -373,13 +397,15 @@ footer a{color:#e2e8f0;}
       </div>
 
       <!-- CP Veicular -->
-       <div class="card cp">
+       <div class="card cp destaque">
+        <div class="selo-premium">POPULAR</div>
         <h3>COMPLETA VEÍCULAR</h3>
         <p>Consulta mais completa com dados cadastrais, débitos, restrições, histórico de roubo/furto, sinistro, leilão, gravame, ficha técnica, Tabela FIPE e muito mais.</p>
         <span class="price-tag">R$ 24,99</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
-        <div class="card cp">
+       <div class="card cp destaque">
+        <div class="selo-premium">POPULAR</div>
         <h3>(CRV) COD segurança-CRV</h3>
         <p>Código presente no CRV (Certificado de Registro de Veículo)</p>
         <span class="price-tag">R$ 29,00</span>
