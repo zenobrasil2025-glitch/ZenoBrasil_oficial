@@ -85,7 +85,7 @@ body.menu-open .nav-overlay{opacity:1; visibility:visible; pointer-events:auto;}
 .hero{position:relative; overflow:hidden; isolation:isolate; background: linear-gradient(120deg, var(--brand) 0%, var(--brand-2) 60%, var(--brand) 120%); color:#fff;}
 .hero::before{content:"";position:absolute;inset:0;background: radial-gradient(60% 80% at 70% 40%, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 60%), url('https://images.unsplash.com/photo-1597005052877-48a4d93e38bb?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; mix-blend-mode:overlay;opacity:.35;}
 .hero-inner{position:relative;z-index:1;padding:clamp(48px,8vw,120px) 0 64px;text-align:center;}
-.hero h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:0 0 12px;}
+.hero h1{font-size:clamp(28px,5vw,40px);line-height:1.1;margin:0 0 12px;}
 .hero p{font-size:clamp(16px,2.2vw,20px);opacity:.95;margin:0 auto;max-width:900px;}
 .hero .cta{display:flex;justify-content:center;gap:12px;margin-top:22px;flex-wrap:wrap;}
 .hero .ribbon{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:7px 12px;border-radius:999px;font-weight:600;margin-bottom:10px;}
@@ -229,8 +229,8 @@ footer a{color:#e2e8f0;}
   <div class="container hero-inner">
     <a href="#" class="ribbon btn-primary">Descubra como usar a Zeno com facilidade.</a>
     <a class="btn outline" href="tutoriais.html" rel="noopener">Assistir Tutoriais</a>
-    <h1>Conecte nossa API ao seu sistema e ofereça consultas rápidas, precisas e seguras.</h1>
-    <p>Facilite o acesso a informações confiáveis e transforme a experiência dos seus usuários, sem complicações e com total segurança.</p>
+    <h1>O sistema de consulta e emissão de documentos veiculares mais usado por despachantes, lojistas e motoristas.</h1>
+    <p>Pare de pagar caro por consultas! O mesmo sistema confiável de despachantes e lojas de veículos agora disponível para qualquer pessoa, física ou jurídica..</p>
     <div class="cta">
       <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d" rel="noopener">CADASTRE-SE E CONSULTE AGORA!</a>
       <a class="btn outline" href="https://app.zenobrasil.com.br/" rel="noopener">Acessar minha conta</a>
@@ -373,6 +373,18 @@ footer a{color:#e2e8f0;}
       </div>
 
       <!-- CP Veicular -->
+       <div class="card cp">
+        <h3>COMPLETA VEÍCULAR</h3>
+        <p>Consulta mais completa com dados cadastrais, débitos, restrições, histórico de roubo/furto, sinistro, leilão, gravame, ficha técnica, Tabela FIPE e muito mais.</p>
+        <span class="price-tag">R$ 24,99</span>
+        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
+      </div>
+        <div class="card cp">
+        <h3>(CRV) COD segurança-CRV</h3>
+        <p>Código presente no CRV (Certificado de Registro de Veículo)</p>
+        <span class="price-tag">R$ 29,00</span>
+        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
+      </div>
       <div class="card cp">
         <h3>CNH NACIONAL POR CPF</h3>
         <p>Consulta da Carteira Nacional de Habilitação vinculada ao CPF, com informações atualizadas sobre habilitação, pontos, validade e restrições.</p>
@@ -425,12 +437,6 @@ footer a{color:#e2e8f0;}
         <h3>RECALL</h3>
         <p>informa se o veículo possui campanhas de recall pendentes, convocando o proprietário para correções de defeitos de fábrica identificados pela montadora.</p>
         <span class="price-tag">R$ 1,89</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
-      </div>
-      <div class="card cp">
-        <h3>COMPLETA VEÍCULAR</h3>
-        <p>Consulta mais completa com dados cadastrais, débitos, restrições, histórico de roubo/furto, sinistro, leilão, gravame, ficha técnica, Tabela FIPE e muito mais.</p>
-        <span class="price-tag">R$ 24,99</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
       <div class="card cp">
@@ -533,12 +539,6 @@ footer a{color:#e2e8f0;}
         <h3>CHECK LIST</h3>
         <p>Lista de verificação completa com todos os itens essenciais para avaliação do veículo, incluindo documentação, histórico e condições gerais.</p>
         <span class="price-tag">R$ 4,80</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
-      </div>
-       <div class="card cp">
-        <h3>COD SEGURANÇA - CRV</h3>
-        <p>Código presente no CRV (Certificado de Registro de Veículo)</p>
-        <span class="price-tag">R$ 29,00</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
        <div class="card cp">
@@ -755,7 +755,7 @@ footer a{color:#e2e8f0;}
     </div>
     <div>
       <h4>Contato</h4>
-      <p>Email: zenobrasil2025@gmail.com</p>
+      <p>Email:  sac@zenobrasil.com.br</p>
       <a href="https://wa.me/553197271899">Telefone: (31)97271899</a>
     </div>
   </div>
