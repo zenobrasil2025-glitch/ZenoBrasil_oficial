@@ -11,6 +11,15 @@
 <link rel="icon" type="image/png" href="img/Icon_zeno.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+<script>
+  window.Brevo = window.Brevo || [];
+  Brevo.push([
+    "init",
+    {
+      client_key: "eyJhcGlfa2V5IjoieGtleXNpYi0wOThmNmIxZGM0YWJkYzVjNDFkODg5OTY5OGM4ZDRlY2M1OTllNWYzZmQ1ZjQyY2FlNzUxYmNhNzYyZGE1NjVmLUQyRWYwUGtHZEFDVGVvNlAifQ==" // chave fornecida no painel Brevo
+    }
+  ]);
+</script>
 
 <script>
     // Version: 2.0
@@ -91,12 +100,15 @@ body.menu-open .nav-overlay{opacity:1; visibility:visible; pointer-events:auto;}
 .hero .ribbon{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:7px 12px;border-radius:999px;font-weight:600;margin-bottom:10px;}
 
 /* BENEFÍCIOS */
-.benefits{background:#fff;transform:translateY(-28px);}
-.benefits .wrap{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(3,1fr);gap:0;overflow:hidden;}
-.benefit{padding:22px;border-right:1px solid var(--border);}
-.benefit:last-child{border-right:none;}
-.benefit h4{margin:0 0 6px;font-size:18px;color:#111827;}
-.benefit p{margin:0;color:var(--muted);font-size:14px;}
+.benefits {padding: 60px 20px; background: linear-gradient(135deg, #f7f7f7, #ffffff); text-align: center;}
+.section-title {font-size: 2rem; font-weight: 700; color: #222; margin-bottom: 10px;}
+.section-subtitle {font-size: 1.1rem; color: #666; margin-bottom: 40px;}
+.benefits-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;}
+
+.benefit-card {background: #fff; border-radius: 16px; padding: 25px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;}
+.benefit-card:hover {transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.12);}
+.icon {font-size: 2rem; margin-bottom: 15px;}
+
 
 /* SECTION / CARDS / TABS */
 .section{padding: clamp(48px,7vw,96px) 0;}
@@ -229,7 +241,7 @@ footer a{color:#e2e8f0;}
 }
 
 .logo-seguranca img {
-  max-width: 200px; /* tamanho pequeno */
+  max-width: 300px; /* tamanho pequeno */
   height: auto;
   opacity: 0.9;
 }
@@ -279,23 +291,37 @@ footer a{color:#e2e8f0;}
 <!-- BENEFÍCIOS -->
 <section class="benefits">
   <div class="container">
-    <div class="wrap">
-      <div class="benefit">
-        <h4>Seus créditos não expiram</h4>
-        <p>Use de acordo com a sua necessidade.</p>
+    <h2 class="section-title">Por que escolher a Zeno?</h2>
+    <p class="section-subtitle">Tecnologia, praticidade e segurança para o seu dia a dia.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="icon">💎</div>
+        <h4>Créditos sem prazo</h4>
+        <p>Você usa quando quiser, sem preocupações.</p>
       </div>
-      <div class="benefit">
-        <h4>Sistema pré-pago</h4>
-        <p>Sem mensalidade e sem taxa de adesão.</p>
+
+      <div class="benefit-card">
+        <div class="icon">⚡</div>
+        <h4>Pré-pago transparente</h4>
+        <p>Zero mensalidades e nenhuma taxa escondida.</p>
       </div>
-      <div class="benefit">
-        <h4>Consultas rápidas e automáticas 
-          direto do whatsapp</h4>
-        <p>Agilidade e praticidade na palma da sua mão.</p>
+
+      <div class="benefit-card">
+        <div class="icon">📲</div>
+        <h4>Consultas pelo WhatsApp</h4>
+        <p>Automação e velocidade na palma da sua mão.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="icon">🛡️</div>
+        <h4>Segurança e Confiabilidade</h4>
+        <p>Certificação e Proteção Avançada.</p>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- ABAS CONSULTAS CRED/Score e CONSULTAS VEICULARES -->
 <section id="consultas" class="section">
@@ -424,13 +450,6 @@ footer a{color:#e2e8f0;}
         <span class="price-tag">R$ 29,00</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
-       <div class="card cp destaque">
-        <div class="selo-premium">POPULAR</div>
-        <h3>CRLV-e PE</h3>
-        <p> CRLV-e PE do veículo e fornece a consulta do proprietário atual, garantindo informações oficiais e atualizadas sobre a regularidade do veículo.</p>
-        <span class="price-tag">R$ 42,00</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
-      </div>
       <div class="card cp destaque">
         <div class="selo-premium">POPULAR</div>
         <h3>COMUNICADO DE VENDA</h3>
@@ -439,9 +458,9 @@ footer a{color:#e2e8f0;}
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
       <div class="card cp">
-        <h3>CNH NACIONAL POR CPF</h3>
-        <p>Consulta da Carteira Nacional de Habilitação vinculada ao CPF, com informações atualizadas sobre habilitação, pontos, validade e restrições.</p>
-        <span class="price-tag">R$ 8,40</span>
+        <h3>CRLV-e PE</h3>
+        <p> CRLV-e PE do veículo e fornece a consulta do proprietário atual, garantindo informações oficiais e atualizadas sobre a regularidade do veículo.</p>
+        <span class="price-tag">R$ 42,00</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
        <div class="card cp">
@@ -520,6 +539,12 @@ footer a{color:#e2e8f0;}
         <h3>CRLV-e TO</h3>
         <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
         <span class="price-tag">R$ 9,99</span>
+        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
+      </div>
+      <div class="card cp">
+        <h3>CNH NACIONAL POR CPF</h3>
+        <p>Consulta da Carteira Nacional de Habilitação vinculada ao CPF, com informações atualizadas sobre habilitação, pontos, validade e restrições.</p>
+        <span class="price-tag">R$ 8,40</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Consultar</a>
       </div>
       <div class="card cp">
@@ -842,11 +867,14 @@ footer a{color:#e2e8f0;}
       <a href="https://wa.me/553197271899">Telefone: (31)97271899</a>
     </div>
 
-     <!-- LOGO DE SEGURANÇA (lado direito) -->
-    <div class="logo-seguranca">
-      <img src="img/Logo Safe Browsing.png" alt="Google Protect">
-    </div>
-  </div>
+<!-- LOGO DE SEGURANÇA (lado direito) -->
+<div class="logo-seguranca">
+  <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fwww.zenobrasil.com.br" 
+     target="_blank" 
+     rel="noopener">
+    <img src="img/Logo Safe Browsing.png" alt="Google Safe Browsing">
+  </a>
+</div>
   </div>
   <div class="copy">
     &copy; 2025 Zeno Brasil Oficial. Todos os direitos reservados.
