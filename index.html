@@ -240,6 +240,14 @@ footer a{color:#e2e8f0;}
 </head>
 <body>
 
+    <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+        .then((reg) => console.log("Service Worker registrado:", reg))
+        .catch((err) => console.error("Erro ao registrar SW:", err));
+    }
+  </script>
+
 <!-- NAV -->
 <header class="nav">
   <div class="container nav-inner">
@@ -993,4 +1001,5 @@ items.forEach(item => {
 
 </body>
 </html>
+
 
