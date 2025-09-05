@@ -986,6 +986,23 @@ items.forEach(item => {
        src="https://www.facebook.com/people/ZenoBrasil/61578340322552/"/>
 </noscript>
 <!-- ✅ END META PIXEL CODE -->
+
+<script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+<script>
+  window.Brevo = window.Brevo || [];
+
+  // Inicializa com a chave da sua conta Brevo
+  Brevo.push([
+    "init", 
+    { client_key: "eyJhcGlfa2V5IjoieGtleXNpYi0wOThmNmIxZGM0YWJkYzVjNDFkODg5OTY5OGM4ZDRlY2M1OTllNWYzZmQ1ZjQyY2FlNzUxYmNhNzYyZGE1NjVmLUQyRWYwUGtHZEFDVGVvNlAifQ==" }
+  ]);
+
+  // Pede permissão ao usuário
+  Brevo.push([
+    "webPush", 
+    "subscribe"
+  ]);
+</script>
  
 </body>
 </html>
