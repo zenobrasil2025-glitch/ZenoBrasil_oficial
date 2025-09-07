@@ -11,8 +11,6 @@
 <link rel="icon" type="image/png" href="img/Icon_zeno.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
- <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
-
 
  <!-- Google Analytics -->
  <!-- Google tag (gtag.js) -->
@@ -879,129 +877,72 @@ footer a{color:#e2e8f0;}
 </div>
 
 <script>
-    // ===== MENU MOBILE =====
-    const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    const overlay = document.querySelector('.nav-overlay');
+  // ===== MENU MOBILE =====
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  const overlay = document.querySelector('.nav-overlay');
 
-    function openMenu(){
-      navLinks.classList.add('show');
-      document.body.classList.add('menu-open');
-      menuBtn.setAttribute('aria-expanded','true');
-      menuBtn.textContent = '✕';
-    }
-    function closeMenu(){
-      navLinks.classList.remove('show');
-      document.body.classList.remove('menu-open');
-      menuBtn.setAttribute('aria-expanded','false');
-      menuBtn.textContent = '☰';
-    }
+  function openMenu(){
+    navLinks.classList.add('show');
+    document.body.classList.add('menu-open');
+    menuBtn.setAttribute('aria-expanded','true');
+    menuBtn.textContent = '✕';
+  }
+  function closeMenu(){
+    navLinks.classList.remove('show');
+    document.body.classList.remove('menu-open');
+    menuBtn.setAttribute('aria-expanded','false');
+    menuBtn.textContent = '☰';
+  }
 
-    menuBtn.addEventListener('click', () => {
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      expanded ? closeMenu() : openMenu();
+  menuBtn.addEventListener('click', () => {
+    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    expanded ? closeMenu() : openMenu();
+  });
+
+  if (overlay) overlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.nav-links a').forEach(link=>{
+    link.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
+
+  // ===== ABAS =====
+  const tabs = document.querySelectorAll('.tab');
+  const pfCards = document.querySelectorAll('.card.pf');
+  const pjCards = document.querySelectorAll('.card.pj');
+  const cpCards = document.querySelectorAll('.card.cp');
+
+  function showCards(target){
+    pfCards.forEach(c => c.style.display = target==='pf' ? 'block' : 'none');
+    pjCards.forEach(c => c.style.display = target==='pj' ? 'block' : 'none');
+    cpCards.forEach(c => c.style.display = target==='cp' ? 'block' : 'none');
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      showCards(tab.dataset.target);
     });
+  });
 
-    if (overlay) overlay.addEventListener('click', closeMenu);
-    document.querySelectorAll('.nav-links a').forEach(link=>{
-      link.addEventListener('click', closeMenu);
+  document.addEventListener('DOMContentLoaded', () => {
+    const activeTab = document.querySelector('.tab.active');
+    if(activeTab) showCards(activeTab.dataset.target);
+    else showCards('pf');
+  });
+
+  // ===== FAQ =====
+  const items = document.querySelectorAll('.faq .item');
+  items.forEach(item => {
+    const q = item.querySelector('.q');
+    q.addEventListener('click', () => {
+      item.classList.toggle('open');
     });
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
+  });
+</script>
 
-    // ===== ABAS =====
-    const tabs = document.querySelectorAll('.tab');
-    const pfCards = document.querySelectorAll('.card.pf');
-    const pjCards = document.querySelectorAll('.card.pj');
-    const cpCards = document.querySelectorAll('.card.cp');
-
-    function showCards(target){
-      pfCards.forEach(c => c.style.display = target==='pf' ? 'block' : 'none');
-      pjCards.forEach(c => c.style.display = target==='pj' ? 'block' : 'none');
-      cpCards.forEach(c => c.style.display = target==='cp' ? 'block' : 'none');
-    }
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        showCards(tab.dataset.target);
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const activeTab = document.querySelector('.tab.active');
-      if(activeTab) showCards(activeTab.dataset.target);
-      else showCards('pf');
-    });
-
-    // ===== FAQ =====
-    const items = document.querySelectorAll('.faq .item');
-    items.forEach(item => {
-      const q = item.querySelector('.q');
-      q.addEventListener('click', () => {
-        item.classList.toggle('open');
-      });
-    });
-  </script>
-
-  <!-- ✅ META PIXEL -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '24033688586327819'); 
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" 
-         src="https://www.facebook.com/tr?id=24033688586327819&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- ✅ END META PIXEL -->
-
-  <!-- ✅ BREVO -->
-  <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
-  <script>
-    window.Brevo = window.Brevo || [];
-    Brevo.push([
-      "init", 
-      { client_key: "eyJhcGlfa2V5IjoieGtleXNpYi0wOThmNmIxZGM0YWJkYzVjNDFkODg5OTY5OGM4ZDRlY2M1OTllNWYzZmQ1ZjQyY2FlNzUxYmNhNzYyZGE1NjVmLUQyRWYwUGtHZEFDVGVvNlAifQ==" }
-    ]);
-  </script>
-
-  <!-- ✅ COOKIES + NOTIFICAÇÕES -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cookieBanner = document.getElementById("cookie-banner");
-      const acceptBtn = document.getElementById("accept-cookies");
-
-      if (!localStorage.getItem("cookiesAccepted")) {
-        cookieBanner.style.display = "block";
-      }
-
-      acceptBtn.addEventListener("click", function () {
-        localStorage.setItem("cookiesAccepted", "true");
-        cookieBanner.style.display = "none";
-
-        // Só pede notificação depois que aceitar cookies
-        if (Notification && Notification.permission !== "granted") {
-          Notification.requestPermission().then(permission => {
-            if (permission === "granted") {
-              new Notification("Obrigado por aceitar as notificações!");
-              Brevo.push(["webPush", "subscribe"]);
-            }
-          });
-        }
-      });
-    });
-  </script>
-
-
-<!-- ✅ META PIXEL CODE -->
+<!-- ✅ META PIXEL -->
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -1016,48 +957,46 @@ footer a{color:#e2e8f0;}
 </script>
 <noscript>
   <img height="1" width="1" style="display:none" 
-       src="https://www.facebook.com/people/ZenoBrasil/61578340322552/"/>
+       src="https://www.facebook.com/tr?id=24033688586327819&ev=PageView&noscript=1"/>
 </noscript>
-<!-- ✅ END META PIXEL CODE -->
+<!-- ✅ END META PIXEL -->
 
+<!-- ✅ BREVO -->
 <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
 <script>
   window.Brevo = window.Brevo || [];
-
-  // Inicializa com a chave da sua conta Brevo
   Brevo.push([
     "init", 
     { client_key: "eyJhcGlfa2V5IjoieGtleXNpYi0wOThmNmIxZGM0YWJkYzVjNDFkODg5OTY5OGM4ZDRlY2M1OTllNWYzZmQ1ZjQyY2FlNzUxYmNhNzYyZGE1NjVmLUQyRWYwUGtHZEFDVGVvNlAifQ==" }
   ]);
-
-  // Pede permissão ao usuário
-  Brevo.push([
-    "webPush", 
-    "subscribe"
-  ]);
 </script>
 
+<!-- ✅ COOKIES + NOTIFICAÇÕES -->
 <script>
-  // Verifica se já aceitou os cookies
-  if (!localStorage.getItem("cookiesAccepted")) {
-    document.getElementById("cookie-banner").style.display = "block";
-  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
 
-  document.getElementById("accept-cookies").addEventListener("click", function () {
-    localStorage.setItem("cookiesAccepted", "true");
-    document.getElementById("cookie-banner").style.display = "none";
-  });
+    if (!localStorage.getItem("cookiesAccepted")) {
+      cookieBanner.style.display = "block";
+    }
 
-  // Solicitação de permissão para notificações
-  if (Notification && Notification.permission !== "granted") {
-    Notification.requestPermission().then(permission => {
-      if (permission === "granted") {
-        new Notification("Obrigado por aceitar as notificações!");
+    acceptBtn.addEventListener("click", function () {
+      localStorage.setItem("cookiesAccepted", "true");
+      cookieBanner.style.display = "none";
+
+      // Só pede notificação depois que aceitar cookies
+      if (Notification && Notification.permission !== "granted") {
+        Notification.requestPermission().then(permission => {
+          if (permission === "granted") {
+            new Notification("Obrigado por aceitar as notificações!");
+            Brevo.push(["webPush", "subscribe"]);
+          }
+        });
       }
     });
-  }
+  });
 </script>
-
  
 </body>
 </html>
