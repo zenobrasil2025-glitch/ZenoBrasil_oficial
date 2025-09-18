@@ -12,7 +12,486 @@
 <style>
 :root{
   --brand:#0066cc; 
+  --brand-2:#00cc66; <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ZenoBrasil — Consultas Veículares/Créditos</title>
+<meta name="description" content="Consultas CPF/CNPJ, planos pré-pago e mensal com acesso imediato. Sem mensalidade no pré-pago." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="img/Icon_zeno.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#0066cc; 
   --brand-2:#00cc66; 
+  --accent:#0099cc;
+  --bg:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --shadow:0 10px 30px rgba(2,6,23,.08);
+  --container:1200px;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;scroll-behavior:smooth;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;line-height:1.5;}
+body{color:var(--text);background:var(--bg);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.container{max-width:var(--container);margin-inline:auto;padding-inline:clamp(16px,3vw,28px);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:10px;font-weight:700;transition:.2s ease;cursor:pointer;white-space:nowrap;}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff;box-shadow:0 8px 24px rgba(0,102,204,.25);}
+.btn.primary:hover{filter:brightness(1.05);}
+.btn.outline{border:1px solid var(--brand);color:var(--brand);background:#fff;}
+.btn.outline:hover{background:#f0faff;}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);color:#374151;background:#fff;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-img{height:40px;width:auto;display:block;}
+.nav-links{display:flex;gap:20px;font-weight:600;}
+.nav-cta{display:flex;gap:12px;}
+.menu-btn{display:none;border:1px solid var(--border);border-radius:10px;padding:8px 12px;background:#fff;font-size:22px;cursor:pointer;transition:0.3s;}
+.menu-btn.active{transform:rotate(90deg);}
+
+/* OVERLAY p/ menu mobile */
+.nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.4);
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .25s ease, visibility .25s ease;
+  z-index:40;
+}
+body.menu-open .nav-overlay{opacity:1; visibility:visible; pointer-events:auto;}
+
+/* HERO */
+.hero{position:relative; overflow:hidden; isolation:isolate; background: linear-gradient(120deg, var(--brand) 0%, var(--brand-2) 60%, var(--brand) 120%); color:#fff;}
+.hero::before{content:"";position:absolute;inset:0;background: radial-gradient(60% 80% at 70% 40%, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 60%), url('https://images.unsplash.com/photo-1597005052877-48a4d93e38bb?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; mix-blend-mode:overlay;opacity:.35;}
+.hero-inner{position:relative;z-index:1;padding:clamp(48px,8vw,120px) 0 64px;text-align:center;}
+.hero h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:0 0 12px;}
+.hero p{font-size:clamp(16px,2.2vw,20px);opacity:.95;margin:0 auto;max-width:900px;}
+.hero .cta{display:flex;justify-content:center;gap:12px;margin-top:22px;flex-wrap:wrap;}
+.hero .ribbon{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:7px 12px;border-radius:999px;font-weight:600;margin-bottom:10px;}
+
+/* FOOTER */
+footer{background:#0f172a;color:#cbd5e1;}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px;padding:32px 0;}
+footer a{color:#e2e8f0;}
+.copy{border-top:1px solid rgba(255,255,255,.08);padding:14px 0;font-size:14px;color:#94a3b8;text-align:center;}
+.brand-foot{display:flex;align-items:center;gap:12px;}
+.brand-foot img{height:40px;width:auto;}
+.social{display:flex;gap:10px;margin-top:10px;}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);}
+.social svg{width:18px;height:18px;fill:#e2e8f0;}
+
+/* WHATSAPP */
+.whatsapp{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.wa-btn{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-size:26px;box-shadow:0 10px 30px rgba(0,102,204,.35);text-decoration:none;}
+.wa-note{background:#111827;color:#fff;padding:8px 12px;border-radius:8px;font-size:14px;box-shadow:var(--shadow);}
+
+/* RESPONSIVO */
+@media (max-width:1024px){
+  .benefits .wrap{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;}
+  .foot{grid-template-columns:1fr 1fr}
+}
+
+/* MOBILE (menu lateral) */
+@media (max-width:680px){
+  .nav-links{
+    position:fixed;
+    top:0; left:-280px;
+    height:100vh; width:280px;
+    flex-direction:column;
+    padding:96px 20px 20px;
+    gap:20px;
+    background:#fff;
+    box-shadow:4px 0 20px rgba(0,0,0,0.12);
+    transition:left 0.3s ease;
+    z-index:60; /* acima do overlay */
+  }
+  .nav-links.show{ left:0; }
+  .nav-cta{display:none;}
+  .menu-btn{display:inline-flex;}
+  body.menu-open{overflow:hidden;}
+  .foot{grid-template-columns:1fr}
+}
+
+/* NOTÍCIAS */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
+}
+.news-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  transition:.3s ease;
+}
+.news-card:hover{transform:translateY(-6px);}
+.news-card img{width:100%;height:200px;object-fit:cover;}
+.news-content{padding:18px;flex:1;display:flex;flex-direction:column;}
+.news-date{font-size:14px;color:var(--muted);margin-bottom:6px;display:block;}
+.news-card h3{font-size:18px;margin:0 0 10px;}
+.news-card p{flex:1;color:var(--muted);font-size:15px;margin-bottom:12px;}
+.news-card .btn{align-self:flex-start;}
+
+/* FITE NOTÍCIAS */
+
+    .container {
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    .news-hero {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    /* Logo Footer */
+  .logo-seguranca {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo-seguranca img {
+  max-width: 300px; /* tamanho pequeno */
+  height: auto;
+  opacity: 0.9;
+}
+
+
+</style>  
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#inicio" aria-label="Novos Dados - Início">
+      <img src="img/LOGOZENO.png" alt="Novos Dados" class="brand-img">
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-label="Abrir menu" aria-controls="menu-principal">☰</button>
+    <nav id="menu-principal" class="nav-links" aria-label="Principal">
+    </nav>
+    <div class="nav-cta">
+      <a class="btn primary" href="index.html"  rel="noopener">Início</a>
+    </div>
+  </div>
+</header>
+
+<!-- OVERLAY (escurece fundo ao abrir menu) -->
+<div class="nav-overlay" aria-hidden="true"></div>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="container hero-inner">
+    <h1>Acompanhe as últimas novidades da Zeno Brasi</h1>
+    <p>Fique por dentro das atualizações, melhorias e comunicados importantes sobre nossos serviços de consultas CPF/CNPJ.</p>
+  </div>
+</section>
+
+ <!-- NOTÍCIA 1 -->
+<section id="noticia1">
+<main class="container">
+  <img src="img/banner-noticias.jpg" alt="Imagem da notícia" class="news-hero">
+  <h2>Novidade no Painel Zeno: CRLV-e Pernambuco já disponível</h2>
+  <p><strong>Publicado em:</strong> 23 de agosto de 2025</p>
+
+  <p>
+    A ZenoBrasil acaba de anunciar mais uma novidade no seu painel de consultas: agora os usuários já podem acessar o CRLV-e (Certificado de Registro e Licenciamento de Veículo eletrônico) do estado de Pernambuco de forma prática, rápida e totalmente digital. Essa atualização representa um avanço significativo para despachantes, empresas do setor automotivo e consumidores que necessitam consultar e validar documentos veiculares com segurança.
+    <br><br>
+    O que é o CRLV-e Pernambuco?<br><br>
+    O CRLV-e é a versão eletrônica do documento de licenciamento de veículos, que substitui o documento físico em papel. No caso de Pernambuco, a integração com o painel Zeno permite que informações como situação de licenciamento, pendências financeiras e status de regularização do veículo estejam disponíveis em poucos segundos.
+    <br><br>
+    Com essa novidade, quem atua com consultas veiculares terá acesso facilitado a dados atualizados, essenciais para verificar a legalidade de automóveis em processos de compra, venda, transferência ou regularização.
+    <br><br>
+    Benefícios da nova função no painel Zeno<br><br>
+    Praticidade: consulta do CRLV-e Pernambuco diretamente pelo painel, sem burocracia;<br>
+    Segurança: dados obtidos de forma criptografada, evitando riscos de fraude;<br>
+    Integração completa: relatórios podem ser cruzados com outras consultas veiculares já disponíveis na Zeno, como histórico de multas, gravame, leilão, restrições e ocorrências;<br>
+    Apoio na tomada de decisão: ideal para empresas de revenda, financeiras e locadoras que precisam validar veículos com rapidez.
+    <br><br>
+    Mais que consultas veiculares<br><br>
+    Além do CRLV-e Pernambuco, o painel Zeno continua oferecendo soluções completas que englobam não apenas documentos veiculares, mas também serviços voltados a consultas de crédito, análise de score e consulta de dívidas. Essa combinação garante uma visão completa e segura tanto do veículo quanto da situação financeira do comprador ou vendedor.
+    <br><br>
+    Tendência e expansão<br><br>
+    Com a inclusão do CRLV-e Pernambuco, a expectativa é que a Zeno amplie cada vez mais a cobertura de documentos veiculares digitais em todo o Brasil, atendendo à crescente demanda por soluções modernas e integradas. O objetivo é simplificar a vida de profissionais e empresas, oferecendo relatórios completos que unem consultas veiculares, documentos, crédito e score em um único ambiente digital.
+  </p>
+</main>
+</section>
+
+<!-- NOTÍCIA 2 -->
+<section id="noticia2">
+    <main class="container">
+    <img src="img/banner-noticias.jpg" alt="Imagem da notícia" class="news-hero">
+    <h2>Nova atualização na API da Zeno</h2>
+    <p><strong>Publicado em:</strong> 23 de agosto de 2025</p>
+
+    <p>
+      A ZenoBrasil anuncia uma importante atualização em sua API de consultas, desenvolvida para oferecer ainda mais desempenho, estabilidade e segurança aos usuários que dependem diariamente de informações confiáveis. A novidade chega para atender às crescentes demandas do mercado, especialmente nos segmentos de consultas veiculares, documentos veiculares, além de serviços de consultas de crédito e consulta de dívidas.
+      Com essa atualização, empresas, despachantes, financeiras e profissionais autônomos que utilizam a API da Zeno terão acesso a recursos avançados, garantindo maior agilidade nas integrações e relatórios ainda mais completos.
+      
+      <br><br>
+      <p>Principais melhorias da nova API Zeno:
+      Desempenho otimizado: consultas realizadas em tempo reduzido, permitindo respostas quase instantâneas, tanto em consultas de veículos (placa, Renavam, CRLV-e, gravame) quanto em consultas de CPF e CNPJ.
+      Segurança reforçada: novas camadas de criptografia e protocolos atualizados para proteger os dados em consultas veiculares e consultas de crédito, assegurando máxima confidencialidade das informações.
+      Documentação revisada: manual atualizado e simplificado, facilitando a implementação da API para desenvolvedores que trabalham com sistemas de gestão, plataformas de documentos veiculares e aplicativos de consulta de dívidas.
+      Suporte expandido: inclusão de novos endpoints e funcionalidades que permitem análises mais detalhadas, como verificação de score de crédito, histórico de restrições e relatórios completos de veículos.
+      </p>
+      <br><br>
+      <p>Benefícios para empresas e profissionais:
+      A nova API da ZenoBrasil foi pensada para quem busca confiabilidade e velocidade em processos que envolvem a checagem de informações. Despachantes terão mais facilidade para emitir relatórios sobre documentos veiculares e situação de consultas veiculares em tempo real. Já as financeiras, lojas de veículos e birôs de crédito poderão contar com dados atualizados sobre consultas de crédito, score e consulta de dívidas, ajudando na tomada de decisão com mais segurança.
+      Outro ponto importante é que a integração com sistemas internos ficou ainda mais prática. Profissionais de tecnologia conseguem, em poucos minutos, configurar a API em seus softwares, aproveitando o novo modelo de endpoints que atendem tanto consultas de CPF e CNPJ quanto pesquisas de veículos e documentos.
+      </p>
+      <br><br>
+      Disponibilidade imediata:
+      A atualização já está ativa para todos os usuários da plataforma. Quem já utiliza a API da Zeno terá acesso automático às melhorias, sem custo adicional. Para novos clientes, essa versão representa uma oportunidade única de integrar seus sistemas com uma das APIs mais completas do mercado, voltada para consultas veiculares, consultas de crédito, análise de score e consulta de dívidas.
+      
+      Como acessar:
+      Os detalhes técnicos já estão disponíveis na documentação oficial da ZenoBrasil, que pode ser consultada diretamente no portal da empresa. Em caso de dúvidas, o suporte especializado da Zeno está preparado para orientar tanto desenvolvedores quanto empresas que desejam integrar as soluções em seus sistemas de atendimento, plataformas de vendas ou aplicativos de análise de crédito.
+    </p>
+    <a class="btn primary" href="index.html"  rel="noopener">⬅ Voltar para Notícias</a>
+  </main>
+</section>
+
+<!-- NOTÍCIA 3 -->
+<section id="noticia3">
+  <main class="container">
+    <img src="img/banner-noticias.jpg" alt="Imagem da notícia" class="news-hero">
+    <h2>Relatório aponta crescimento no uso de consultas veiculares</h2>
+    <p><strong>Publicado em:</strong> 23 de agosto de 2025</p>
+
+    <p>
+      Um levantamento recente revelou que o uso de consultas veiculares teve um crescimento expressivo de 30% no último semestre, confirmando a importância cada vez maior desse tipo de serviço para empresas, despachantes, financeiras e consumidores finais. O resultado mostra que informações confiáveis e de fácil acesso são essenciais para garantir segurança, transparência e agilidade em transações do setor automotivo.
+      <br><br>
+      <p>
+      Consultas veiculares: um recurso indispensável. 
+      As consultas de veículos já são consideradas parte fundamental em processos de compra e venda de automóveis. Entre os dados mais acessados pelos usuários estão:
+      </p>
+      <br><br>
+      <p></p>
+      Histórico de multas e infrações;
+      Situação documental (CRLV-e, Renavam, licenciamento);
+      Restrição por gravame e financiamento ativo;
+      Ocorrências policiais como furto, roubo e sinistro;
+      Leilão e histórico de proprietários.
+      <p>
+      Essas informações permitem que consumidores façam escolhas mais seguras, evitando surpresas desagradáveis após a negociação. Para empresas de revenda, locadoras e financeiras, os relatórios de documentos veiculares e consultas de dívidas se tornaram ferramentas estratégicas na avaliação de riscos.
+      </p>
+      <br><br>
+      <p>
+        Integração com crédito e score
+        O relatório ainda aponta um crescimento paralelo na demanda por consultas de crédito, especialmente quando atreladas às consultas veiculares. Hoje, não basta apenas verificar a situação documental de um veículo: é igualmente importante conhecer o score de crédito e o histórico de dívidas do comprador ou vendedor, garantindo que a negociação ocorra de forma segura e transparente.
+        <br><br>
+        Plataformas completas, como a API Zeno, já oferecem integração que une consultas veiculares, documentos veiculares, consultas de crédito e análise de score em um único ambiente. Essa combinação tem sido um diferencial competitivo para empresas que atuam no setor automotivo e financeiro.
+        <br><br>
+        Empresas lideram a utilização:
+        Segundo o levantamento, as empresas de revenda de veículos usados, locação de frotas e financiamento automotivo são as que mais utilizam os serviços de consultas veiculares e consultas de crédito. A necessidade de decisões rápidas e assertivas faz com que essas companhias adotem soluções tecnológicas capazes de fornecer informações completas em poucos segundos.
+        <br><br>
+        Expectativa para os próximos meses:
+        Com o aumento das negociações de veículos usados e seminovos em todo o país, a expectativa é de que a procura por consultas veiculares e documentos veiculares continue em forte expansão. Ao mesmo tempo, o uso de consultas de crédito, análise de score e consulta de dívidas deve crescer, acompanhando a necessidade de garantir operações mais seguras no mercado automotivo e financeiro.
+    </p>
+    <a class="btn primary" href="index.html"  rel="noopener">⬅ Voltar para Notícias</a>
+  </main>
+</section>
+
+<!-- NOTÍCIA 4 -->
+<section id="noticia4">
+  <main class="container">
+    <img src="img/banner-noticias.jpg" alt="Imagem da notícia" class="news-hero">
+    <h2>Segurança digital em destaque</h2>
+    <p><strong>Publicado em:</strong> 23 de agosto de 2025</p>
+
+    <p>
+    Com o avanço da tecnologia e o crescimento exponencial do volume de informações trafegadas todos os dias, a segurança digital se tornou um dos pilares mais importantes para empresas que atuam no setor automotivo e em serviços de consultas veiculares. A proteção de dados sensíveis, como documentos veiculares, registros de veículos, informações financeiras e resultados de consultas de crédito, é hoje um requisito indispensável para garantir confiabilidade, transparência e credibilidade em qualquer transação.
+    <br><br>
+    Por que a segurança digital é tão importante nas consultas?<br><br>
+    As consultas veiculares envolvem informações críticas, como multas, histórico de proprietários, gravame, restrições financeiras, leilão e sinistros. Além disso, em processos de compra, venda ou financiamento, muitas vezes é necessário cruzar esses dados com consultas de crédito, verificações de score e até mesmo a consulta de dívidas em aberto do comprador ou vendedor.
+    <br><br>
+    Sem medidas de segurança digital robustas, esses dados podem ser alvo de fraudes, acessos indevidos ou manipulações que comprometem tanto consumidores quanto empresas. Por isso, soluções tecnológicas que utilizam protocolos avançados de criptografia e autenticação multifator estão se tornando diferenciais competitivos no mercado.
+    <br><br>
+    Como as empresas estão se adaptando<br><br>
+    Despachantes, financeiras, revendedoras e locadoras de veículos têm investido cada vez mais em sistemas seguros de consultas veiculares e documentos veiculares. O objetivo é oferecer ao cliente relatórios confiáveis, blindados contra adulterações, além de proteger as bases de dados utilizadas em consultas de crédito, score e consulta de dívidas.
+    <br><br>
+    Empresas que adotam práticas sólidas de segurança não apenas reduzem riscos de fraudes, mas também transmitem maior confiança para seus clientes, que passam a ter mais segurança na hora de fechar negócios.
+    <br><br>
+    Tendência para o futuro<br><br>
+    Especialistas apontam que a segurança digital continuará sendo um dos principais motores de inovação no setor de consultas e gestão de dados no Brasil. O uso de APIs seguras, monitoramento constante contra ataques cibernéticos e integração de camadas adicionais de proteção farão parte da rotina de qualquer empresa que trabalhe com consultas veiculares, documentos veiculares e análise de crédito.
+    <br><br>
+    No cenário atual, em que cresce a procura por consultas de veículos usados e seminovos, associadas a serviços como verificação de score e consulta de dívidas, a confiança do cliente depende diretamente da solidez dos mecanismos de segurança digital. Por isso, quem investir em tecnologia de ponta nesse setor terá vantagem competitiva nos próximos anos.
+  </p>
+
+    <a class="btn primary" href="index.html"  rel="noopener">⬅ Voltar para Notícias</a>
+  </main>
+</section>
+
+<!-- CONTATO / FOOTER -->
+<footer id="contato">
+  <div class="container foot">
+    <div>
+      <div class="brand-foot">
+        <img src="img/LOGOZENO.png" alt="Zeno Oficial">
+        <span>Novos Dados</span>
+      </div>
+      <p>API de consultas Avançadas para sistemas veiculares.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/zeno_brasil/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3zm5 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></a>
+        <a href="https://www.youtube.com/@Zeno_brasil"  rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.3 3.5 12 3.5 12 3.5s-7.3 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2.1.6 9.4.6 9.4.6s7.3 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@zeno_brasil"  rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M13.5 3a6.5 6.5 0 0 0 6.2 4.6V11a9.2 9.2 0 0 1-6.2-2.3v6.5a5.2 5.2 0 1 1-4.6-5.1v2.2a3 3 0 1 0 2.1 2.9V3h2.5z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/people/ZenoBrasil/61578340322552/"  rel="noopener" aria-label="Facebook">
+    <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/></svg>
+  </a>
+      </div>
+    </div>
+    <div>
+  <h4>Links</h4>
+  <a href="index.html#inicio">Início</a><br>
+  <a href="index.html#consultas">Consultas</a><br>
+  <a href="index.html#duvidas">Dúvidas</a><br>
+  <a href="https://wa.me/553197271899">Contato</a>
+</div>
+
+    <div>
+      <h4>Contato</h4>
+      <p>Email:  sac@zenobrasil.com.br</p>
+      <a href="https://wa.me/553197271899">Telefone: (31)97271899</a>
+    </div>
+
+  <!-- LOGO DE SEGURANÇA (lado direito) -->
+<div class="logo-seguranca">
+  <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fwww.zenobrasil.com.br" 
+     target="_blank" 
+     rel="noopener">
+    <img src="img/Logo Safe Browsing.png" alt="Google Safe Browsing">
+  </a>
+</div>
+  </div>
+  <div class="copy">
+    &copy; 2025 Zeno Brasil Oficial. Todos os direitos reservados.<br>
+  CNPJ: 12.345.678/0001-99
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<div class="whatsapp">
+  <a href="https://wa.me/553197271899" class="wa-btn" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.88 11.88 0 0 0 12 0C5.38 0 .02 5.36.02 11.98c0 2.11.55 4.15 1.6 5.95L0 24l6.27-1.64a11.97 11.97 0 0 0 5.73 1.47h.01c6.62 0 11.98-5.36 11.98-11.98 0-3.2-1.25-6.21-3.47-8.37zM12 21.49a9.48 9.48 0 0 1-4.84-1.32l-.35-.21-3.72.97.99-3.63-.24-.37a9.48 9.48 0 0 1-1.46-5.01c0-5.23 4.26-9.49 9.49-9.49 2.54 0 4.93.99 6.73 2.79a9.43 9.43 0 0 1 2.77 6.7c0 5.23-4.26 9.49-9.49 9.49zm5.38-7.13c-.29-.15-1.71-.84-1.97-.94-.27-.1-.47-.15-.67.15-.19.29-.77.94-.94 1.13-.17.19-.35.21-.64.06-.29-.15-1.23-.45-2.34-1.44-.86-.76-1.44-1.7-1.61-1.99-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.67-1.62-.92-2.21-.24-.57-.48-.49-.67-.5h-.57c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.45s1.03 2.84 1.18 3.04c.15.19 2.03 3.1 4.93 4.34.69.3 1.22.48 1.63.62.68.22 1.3.19 1.79.12.55-.08 1.71-.7 1.95-1.37.24-.67.24-1.24.17-1.37-.07-.12-.26-.19-.55-.34z"/>
+    </svg>
+  </a>
+  <div class="wa-note">Fale conosco via WhatsApp</div>
+</div>
+
+<script>
+// ===== MENU MOBILE LATERAL + OVERLAY =====
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+const overlay = document.querySelector('.nav-overlay');
+
+function openMenu(){
+  navLinks.classList.add('show');
+  document.body.classList.add('menu-open');
+  menuBtn.setAttribute('aria-expanded','true');
+  menuBtn.textContent = '✕';
+}
+function closeMenu(){
+  navLinks.classList.remove('show');
+  document.body.classList.remove('menu-open');
+  menuBtn.setAttribute('aria-expanded','false');
+  menuBtn.textContent = '☰';
+}
+
+menuBtn.addEventListener('click', () => {
+  const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+  expanded ? closeMenu() : openMenu();
+});
+
+// Fechar ao clicar fora
+overlay.addEventListener('click', closeMenu);
+
+// Fechar ao clicar em link
+document.querySelectorAll('.nav-links a').forEach(link=>{
+  link.addEventListener('click', closeMenu);
+});
+
+// Fechar com ESC
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape') closeMenu();
+});
+
+// ===== ABAS PF / PJ / CP =====
+const tabs = document.querySelectorAll('.tab');
+const pfCards = document.querySelectorAll('.card.pf');
+const pjCards = document.querySelectorAll('.card.pj');
+const cpCards = document.querySelectorAll('.card.cp');
+
+function showCards(target){
+  if(target === 'pf') {
+    pfCards.forEach(c => c.style.display = 'block');
+    pjCards.forEach(c => c.style.display = 'none');
+    cpCards.forEach(c => c.style.display = 'none');
+  }
+  else if(target === 'pj') {
+    pfCards.forEach(c => c.style.display = 'none');
+    pjCards.forEach(c => c.style.display = 'block');
+    cpCards.forEach(c => c.style.display = 'none');
+  }
+  else if(target === 'cp') {
+    pfCards.forEach(c => c.style.display = 'none');
+    pjCards.forEach(c => c.style.display = 'none');
+    cpCards.forEach(c => c.style.display = 'block');
+  }
+}
+
+// Ao clicar na aba
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    showCards(tab.dataset.target);
+  });
+});
+
+// Inicializar página com aba ativa
+document.addEventListener('DOMContentLoaded', () => {
+  const activeTab = document.querySelector('.tab.active');
+  if(activeTab) showCards(activeTab.dataset.target);
+  else showCards('pf'); // fallback caso nenhuma esteja ativa
+});
+
+// ===== FAQ =====
+const items = document.querySelectorAll('.faq .item');
+items.forEach(item => {
+  const q = item.querySelector('.q');
+  q.addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
+</script>
+
+
+</body>
+</html>
+
+</body>
+</html>
+
+
   --accent:#0099cc;
   --bg:#ffffff;
   --text:#111827;
@@ -472,4 +951,5 @@ items.forEach(item => {
 
 </body>
 </html>
+
 
