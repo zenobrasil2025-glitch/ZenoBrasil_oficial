@@ -232,6 +232,23 @@ footer a{color:#e2e8f0;}
   height: auto;
   opacity: 0.9;
 }
+/* Saiba mais */
+.btn.secondary {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  background: #f3f3f3;
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.secondary:hover {
+  background: #ddd;
+}
+
 </style>  
 </head>
 <body>
@@ -330,377 +347,93 @@ footer a{color:#e2e8f0;}
     </div>
     
 
-    <!-- Abas -->
-    <div class="tabs">
-      <button class="tab active" data-target="cp">VEICULAR</button>
-      <button class="tab" data-target="pf">CRÉDITO SE</button>
-      <button class="tab" data-target="pj">CADASTRAL</button>
-    </div>
+<!-- Abas -->
+<div class="tabs">
+  <button class="tab active" data-target="cp">VEICULAR</button>
+  <button class="tab" data-target="pf">CRÉDITO SE</button>
+  <button class="tab" data-target="pj">CADASTRAL</button>
+</div>
 
-    <!-- Cards -->
-    <div class="cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
-      <!-- PF CREDITO SE-->
-      <div class="card pf">
-        <h3>ZENO BVS SIMPLES - PF</h3>
-        <p>Consulta simplificada do perfil financeiro no BVS para avaliação rápida de crédito com informações essenciais e confiáveis.</p>
-        <span class="price-tag">R$ 2,49</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>ZENO ACERTA BVS + SCORE - PF</h3>
-        <p>Consulta completa no BVS com análise de score e informações financeiras para avaliação precisa de crédito.</p>
-        <span class="price-tag">R$ 6,85</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>ZENO GOLD PJ</h3>
-        <p>Análise detalhada do perfil financeiro para apoiar decisões de crédito com informações seguras e atualizadas.</p>
-        <span class="price-tag">R$ 14,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>ZENO CRÉDITO - PJ</h3>
-        <p>Análise completa do perfil financeiro empresarial para facilitar decisões de crédito com dados confiáveis e atualizados.</p>
-        <span class="price-tag">R$ 5,09</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>COMPLETA + SCORE - PJ</h3>
-        <p>Retorna dados detalhados do CPF, incluindo pendências, histórico e restrições.</p>
-        <span class="price-tag">R$ 4,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>MAX PJ</h3>
-        <p>Consulta Completa para Pessoa Jurídica com CNPJ, restrições, score, sócios, pendências e análise de crédito empresarial.</p>
-        <span class="price-tag">R$ 11,49</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>QUOD RESTRIÇÕES + AÇÕES - PJ</h3>
-        <p>Consulta completa de CNPJ com restrições financeiras na Quod e registros de ações judiciais da empresa.</p>
-        <span class="price-tag">R$ 6,20</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>ZENO BVS DEFINE PJ</h3>
-        <p>Avaliação detalhada no BVS para definir o perfil de crédito da empresa com dados financeiros atualizados e confiáveis.</p>
-        <span class="price-tag">R$ 6,20</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>ZENO CRÉDITO - PF</h3>
-        <p>Análise detalhada do perfil financeiro para apoiar decisões de crédito com informações seguras e atualizadas.</p>
-        <span class="price-tag">R$ 5,09</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>ZENO GOLD PF</h3>
-        <p>A análise mais completa do mercado para pessoa física, com dados financeiros detalhados, restrições, histórico e score para decisões seguras.</p>
-        <span class="price-tag">R$ 14,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>MAX PF</h3>
-        <p>Consulta Completa para Pessoa Física com dados atualizados, score, restrições e análise detalhada de crédito.</p>
-        <span class="price-tag">R$ 11,49</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>SCR BACEN + SCORE</h3>
-        <p>Consulta ao Sistema de Informações de Crédito do Banco Central para verificar operações de crédito e histórico financeiro de CPF ou CNPJ.</p>
-        <span class="price-tag">R$ 14,87</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>COMPLETA + SCORE - PF</h3>
-        <p>Consulta completa com pendências, restrições financeiras, protestos, dívidas bancárias e muito mais em nome de CPF.</p>
-        <span class="price-tag">R$ 4,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card pf">
-        <h3>QUOD RESTRIÇÕES + AÇÕES - PF</h3>
-        <p>Consulta detalhada de CPF com informações de restrições financeiras da Quod e ações judiciais vinculadas à pessoa física.</p>
-        <span class="price-tag">R$ 6,20</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-
-      <!-- PJ Cadastral -->
-      <div class="card pj" style="display:none;">
-        <h3>PROCESSOS</h3>
-        <p>Consulte ações judiciais ativas ou passadas vinculadas a CPF ou CNPJ em poucos segundos.</p>
-        <span class="price-tag">R$ 7,50</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-
-      <!-- CP Veicular -->
-       <div class="card cp destaque">
-        <div class="selo-premium">POPULAR</div>
-        <h3>COMPLETA VEICULAR</h3>
-        <p>Consulta mais completa com dados cadastrais, débitos, restrições, histórico de roubo/furto, sinistro, leilão, gravame, ficha técnica, Tabela FIPE e muito mais.</p>
-        <span class="price-tag">R$ 24,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp destaque">
-        <div class="selo-premium">POPULAR</div>
-        <h3>(CRV) COD segurança-CRV</h3>
-        <p>Código presente no CRV (Certificado de Registro de Veículo)</p>
-        <span class="price-tag">R$ 29,00</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp destaque">
-        <div class="selo-premium">POPULAR</div>
-        <h3>COMUNICADO DE VENDA</h3>
-        <p>Serviço que permite comunicar oficialmente a venda do veículo de forma online, garantindo segurança jurídica e evitando futuras responsabilidades sobre o automóvel.</p>
-        <span class="price-tag">R$ 26,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e PE</h3>
-        <p> CRLV-e PE do veículo e fornece a consulta do proprietário atual, garantindo informações oficiais e atualizadas sobre a regularidade do veículo.</p>
-        <span class="price-tag">R$ 42,00</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>CRLV-e PR</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e SP</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e MS</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 45,00</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e PA</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e BA</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 36,00</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e MA</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>CRLV-e MT</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e PI</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e MG</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e AP</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e GO</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-        </div>
-      <div class="card cp">
-        <h3>CRLV-e SE</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 36,00</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e TO</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e MT</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e PI</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e MG</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e AP</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CRLV-e GO</h3>
-        <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 9,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-        </div>
-      <div class="card cp">
-        <h3>CNH NACIONAL POR CPF</h3>
-        <p>Consulta da Carteira Nacional de Habilitação vinculada ao CPF, com informações atualizadas sobre habilitação, pontos, validade e restrições.</p>
-        <span class="price-tag">R$ 8,40</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>FICHA TÈCNICA</h3>
-        <p>Informações detalhadas sobre especificações do veículo, como motor, potência, dimensões, peso e equipamentos de fábrica.</p>
-        <span class="price-tag">R$ 4,80</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>HISTÓRICO DE ROUBO E FURTO</h3>
-        <p>Consulta que verifica registros oficiais de ocorrência de roubo ou furto do veículo.</p>
-        <span class="price-tag">R$ 4,87</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>RENAJUD</h3>
-        <p>Registro Nacional de Restrições Judiciais de Veículos Sistema que permite o bloqueio, desbloqueio e restrição de veículos por ordem judicial, vinculando processos diretamente ao registro do veículo.</p>
-        <span class="price-tag">R$ 4,80</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>TABELA FIPE</h3>
-        <p>Informa o valor médio de mercado do veículo conforme a Fundação Instituto de Pesquisas Econômicas, usado como referência em negociações.</p>
-        <span class="price-tag">R$ 3,89</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>LEILÃO SIMPLES</h3>
-        <p>Consulta básica que informa se o veículo já foi oferecido ou arrematado em leilões, com dados resumidos.</p>
-        <span class="price-tag">R$ 6,40</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>RECALL</h3>
-        <p>informa se o veículo possui campanhas de recall pendentes, convocando o proprietário para correções de defeitos de fábrica identificados pela montadora.</p>
-        <span class="price-tag">R$ 1,89</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>BÁSICA VEICULAR</h3>
-        <p>Conjunto de informações dos veículos registradas nos Detrans de cada estado, incluindo situação administrativa, débitos, restrições e licenciamento local. Certificado de segurança veicular RENAJUD RENAINF RECALL BIN</p>
-        <span class="price-tag">R$ 9,79</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>AGREGADOS</h3>
-        <p>Consulta simples com dados cadastrais do veículo: placa, chassi, marca, modelo, ano e situação atual.</p>
-        <span class="price-tag">R$ 1,59</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>BASE ESTADUAL</h3>
-        <p>Consulta informações do veículo registradas no Detran, como situação administrativa, débitos, restrições e licenciamento.</p>
-        <span class="price-tag">R$ 4,56</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>DÉBITOS + BOLETO</h3>
-        <p>Consulta completa dos débitos pendentes do veículo com geração automática de boletos para pagamento.</p>
-        <span class="price-tag">R$ 6,49</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>GRAVAME</h3>
-        <p>Registro de garantia financeira sobre o veículo, indicando financiamentos ou alienações fiduciárias vinculadas ao bem.</p>
-        <span class="price-tag">R$ 4,80</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>SINISTRO</h3>
-        <p>Registro de ocorrências de acidentes graves envolvendo o veículo, com informações sobre danos e sinistros oficiais.</p>
-        <span class="price-tag">R$ 4,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>VEÍCULOS POR CPF/CNPJ</h3>
-        <p>Consulta que lista todos os veículos registrados em nome de uma pessoa física (CPF) ou jurídica (CNPJ), com dados cadastrais e situacionais.</p>
-        <span class="price-tag">R$ 13,95</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>RENAINF</h3>
-        <p>Consulta que reúne multas e infrações registradas em âmbito interestadual e federal, como rodovias federais e sistemas integrados de outros estados.</p>
-        <span class="price-tag">R$ 4,80</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>LEILÃO COMPLETO + SCORE</h3>
-        <p>Consulta detalhada de histórico de leilões do veículo, incluindo status, condições e análise de score para avaliação de risco.</p>
-        <span class="price-tag">R$ 16,29</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>PROPRIETÁRIO ATUAL</h3>
-        <p>Identifica o atual proprietário do veículo conforme o registro oficial no órgão de trânsito.</p>
-        <span class="price-tag">R$ 2,99</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>CHECK LIST</h3>
-        <p>Lista de verificação completa com todos os itens essenciais para avaliação do veículo, incluindo documentação, histórico e condições gerais.</p>
-        <span class="price-tag">R$ 4,80</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>ANO DO ÚLTIMO LICENCIAMENTO DISPONÍVEL + BIN</h3>
-        <p>Ano do último licenciamento disponível – Informa o ano mais recente em que o veículo foi licenciado, essencial para verificar a regularidade documental.</p>
-        <span class="price-tag">R$ 4,49</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-       <div class="card cp">
-        <h3>BASE NACIONAL</h3>
-        <p>Consulta integrada com dados de veículos de todos os estados, abrangendo informações sobre registro, débitos, restrições e histórico nacional.</p>
-        <span class="price-tag">R$ 4,56</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-      <div class="card cp">
-        <h3>CSV RENAINF RENAJUD RECALL BIN PROPRIETÁRIO</h3>
-        <p>RENANIF: registro de multas e infrações. RENAJUD: bloqueio judicial de veículos/bens.
-          RECALL: histórico de recalls e reparos.
-          BIN: dados técnicos e básicos do veículo.
-          PROPRIETÁRIO: informações sobre donos atuais e anteriores.</p>
-        <span class="price-tag">R$ 8,40</span>
-        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
-      </div>
-
-      <!-- ADICIONE MAIS CARDS -->
+<!-- Cards -->
+<div class="cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
+  <!-- VEICULAR - só 3 -->
+  <div class="card cp">
+    <h3>COMPLETA VEICULAR</h3>
+    <p>Consulta mais completa com dados cadastrais, débitos, restrições, histórico e muito mais.</p>
+    <span class="price-tag">R$ 24,99</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
   </div>
+  <div class="card cp">
+    <h3>(CRV) Código de Segurança</h3>
+    <p>Código presente no CRV (Certificado de Registro de Veículo).</p>
+    <span class="price-tag">R$ 29,00</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
+  </div>
+  <div class="card cp">
+    <h3>COMUNICADO DE VENDA</h3>
+    <p>Serviço para comunicar oficialmente a venda do veículo online.</p>
+    <span class="price-tag">R$ 26,99</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
+  </div>
+
+  <!-- Botão Saiba Mais - Veicular -->
+  <div class="cp-btn" style="grid-column: 1 / -1; text-align:center;">
+    <a class="btn secondary" href="veicular.html">Ver todos ➝</a>
+  </div>
+
+
+  <!-- CRÉDITO SE - só 3 -->
+  <div class="card pf">
+    <h3>ZENO BVS SIMPLES - PF</h3>
+    <p>Consulta simplificada do perfil financeiro.</p>
+    <span class="price-tag">R$ 2,49</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
+  </div>
+  <div class="card pf">
+    <h3>ZENO ACERTA BVS + SCORE - PF</h3>
+    <p>Consulta completa com análise de score.</p>
+    <span class="price-tag">R$ 6,85</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
+  </div>
+  <div class="card pf">
+    <h3>ZENO GOLD PJ</h3>
+    <p>Análise detalhada do perfil financeiro empresarial.</p>
+    <span class="price-tag">R$ 14,99</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
+  </div>
+
+  <!-- Botão Saiba Mais - Crédito -->
+  <div class="pf-btn" style="grid-column: 1 / -1; text-align:center;">
+    <a class="btn secondary" href="creditoSe.html">Ver todos ➝</a>
+  </div>
+
+
+  <!-- CADASTRAL - só 3 -->
+  <div class="card pj">
+    <h3>PROCESSOS</h3>
+    <p>Consulte ações judiciais ativas ou passadas vinculadas a CPF ou CNPJ.</p>
+    <span class="price-tag">R$ 7,50</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
+  </div>
+  <div class="card pj">
+    <h3>QUOD RESTRIÇÕES</h3>
+    <p>Consulta de restrições financeiras na base da Quod.</p>
+    <span class="price-tag">R$ 6,20</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
+  </div>
+  <div class="card pj">
+    <h3>SÓCIOS E ADMINISTRADORES</h3>
+    <p>Verifique participação societária de empresas e pessoas.</p>
+    <span class="price-tag">R$ 5,99</span>
+    <a class="btn primary" href="#">🔒 Liberar Acesso</a>
+  </div>
+
+  <!-- Botão Saiba Mais - Cadastral -->
+  <div class="pj-btn" style="grid-column: 1 / -1; text-align:center;">
+    <a class="btn secondary" href="cadastral.html">Ver todos ➝</a>
+  </div>
+
+</div>
 </section>
 
 <!-- COMO FUNCIONA -->
@@ -870,7 +603,8 @@ footer a{color:#e2e8f0;}
 </div>
   </div>
   <div class="copy">
-    &copy; 2025 Zeno Brasil Oficial. Todos os direitos reservados.
+    &copy; 2025 Zeno Brasil Oficial. Todos os direitos reservados.<br>
+  CNPJ: 12.345.678/0001-99
   </div>
 </footer>
 
@@ -915,30 +649,41 @@ footer a{color:#e2e8f0;}
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
 
   // ===== ABAS =====
-  const tabs = document.querySelectorAll('.tab');
-  const pfCards = document.querySelectorAll('.card.pf');
-  const pjCards = document.querySelectorAll('.card.pj');
-  const cpCards = document.querySelectorAll('.card.cp');
+const tabs = document.querySelectorAll('.tab');
+const cpCards = document.querySelectorAll('.card.cp');
+const pfCards = document.querySelectorAll('.card.pf');
+const pjCards = document.querySelectorAll('.card.pj');
 
-  function showCards(target){
-    pfCards.forEach(c => c.style.display = target==='pf' ? 'block' : 'none');
-    pjCards.forEach(c => c.style.display = target==='pj' ? 'block' : 'none');
-    cpCards.forEach(c => c.style.display = target==='cp' ? 'block' : 'none');
-  }
+const cpBtns = document.querySelectorAll('.cp-btn');
+const pfBtns = document.querySelectorAll('.pf-btn');
+const pjBtns = document.querySelectorAll('.pj-btn');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      showCards(tab.dataset.target);
-    });
+function showCards(target) {
+  // Cards
+  cpCards.forEach(c => c.style.display = target === 'cp' ? 'block' : 'none');
+  pfCards.forEach(c => c.style.display = target === 'pf' ? 'block' : 'none');
+  pjCards.forEach(c => c.style.display = target === 'pj' ? 'block' : 'none');
+
+  // Botões
+  cpBtns.forEach(b => b.style.display = target === 'cp' ? 'inline-block' : 'none');
+  pfBtns.forEach(b => b.style.display = target === 'pf' ? 'inline-block' : 'none');
+  pjBtns.forEach(b => b.style.display = target === 'pj' ? 'inline-block' : 'none');
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    showCards(tab.dataset.target);
   });
+});
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const activeTab = document.querySelector('.tab.active');
-    if(activeTab) showCards(activeTab.dataset.target);
-    else showCards('pf');
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  const activeTab = document.querySelector('.tab.active');
+  if(activeTab) showCards(activeTab.dataset.target);
+  else showCards('cp'); // aba padrão
+});
+
 
   // ===== FAQ =====
   const items = document.querySelectorAll('.faq .item');
