@@ -80,7 +80,7 @@ body.menu-open .nav-overlay{opacity:1; visibility:visible; pointer-events:auto;}
 /* HERO */
 .hero{position:relative; overflow:hidden; isolation:isolate; background: linear-gradient(120deg, var(--brand) 0%, var(--brand-2) 60%, var(--brand) 120%); color:#fff;}
 .hero::before{content:"";position:absolute;inset:0;background: radial-gradient(60% 80% at 70% 40%, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 60%), url('https://images.unsplash.com/photo-1597005052877-48a4d93e38bb?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; mix-blend-mode:overlay;opacity:.35;}
-.hero-inner{position:relative;z-index:1;padding:clamp(48px,8vw,120px) 0 64px;text-align:center;}
+.hero-inner{position:relative;z-index:1;padding: clamp(48px,8vw,120px) 0 64px;text-align:center;}
 .hero h1{font-size:clamp(28px,5vw,40px);line-height:1.1;margin:0 0 12px;}
 .hero p{font-size:clamp(16px,2.2vw,20px);opacity:.95;margin:0 auto;max-width:900px;}
 .hero .cta{display:flex;justify-content:center;gap:12px;margin-top:22px;flex-wrap:wrap;}
@@ -249,6 +249,73 @@ footer a{color:#e2e8f0;}
   background: #ddd;
 }
 
+.hero-image {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hero em grid (imagem + texto lado a lado) */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+/* Imagem do hero sem borda nem sombra */
+.hero-img img {
+  max-width: 380px; /* controla o tamanho máximo da foto */
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* remove borda arredondada */
+  box-shadow: none; /* remove sombra */
+}
+
+
+/* Texto ocupa o restante */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.logo-wrapper {
+  position: absolute;
+  top: 100px;
+  left: 350px;
+  width: 170px; /* tamanho desejado */
+  height: auto;
+}
+
+.logo-animada {
+  width: 100%;  /* ocupa 100% do wrapper */
+  height: auto;
+  animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-img {
+    order: -1; /* joga imagem para cima no mobile */
+  }
+  .hero-text {
+    align-items: center;
+  }
+  
+}
+
+
 </style>  
 </head>
 <body>
@@ -290,15 +357,34 @@ footer a{color:#e2e8f0;}
 
 <!-- HERO -->
 <section id="inicio" class="hero">
-  <div class="container hero-inner">
-    <a href="#" class="ribbon btn-primary">Descubra como usar a Zeno com facilidade.</a>
-    <a class="btn outline" href="tutoriais.html" rel="noopener">Assistir Tutoriais</a>
-    <h1>O sistema de consulta e emissão de documentos veiculares mais usado por despachantes, lojistas e motoristas.</h1>
-    <p>Pare de pagar caro por consultas! O mesmo sistema confiável de despachantes e lojas de veículos agora disponível para qualquer pessoa, física ou jurídica..</p>
-    <div class="cta">
-      <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d" rel="noopener">CADASTRE-SE E CONSULTE AGORA!</a>
-      <a class="btn outline" href="https://app.zenobrasil.com.br/" rel="noopener">Acessar minha conta</a>
+  <div class="container hero-inner hero-grid">
+
+    <!-- Imagem -->
+    <div class="hero-img">
+      <img src="img/Modelo.png" alt="Cliente feliz usando Zeno" />
+       <!-- Logo animada -->
+      <div class="logo-wrapper">
+  <img src="img/Icon_zeno.png" alt="Logo Zeno" class="logo-animada">
+</div>
+
     </div>
+
+    <!-- Texto -->
+    <div class="hero-text">
+      <a href="#" class="ribbon btn-primary">Descubra como usar a Zeno com facilidade.</a>
+      <a class="btn outline" href="tutoriais.html" rel="noopener">Assistir Tutoriais</a>
+      <h1>O sistema de consulta e emissão de documentos veiculares mais usado por despachantes, lojistas e motoristas.</h1>
+      <p>Pare de pagar caro por consultas! O mesmo sistema confiável de despachantes e lojas de veículos agora disponível para qualquer pessoa, física ou jurídica.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d" rel="noopener">CADASTRE-SE E CONSULTE AGORA!</a>
+        <a class="btn outline" href="https://app.zenobrasil.com.br/" rel="noopener">Acessar minha conta</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
   </div>
 </section>
 
