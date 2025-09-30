@@ -59,7 +59,16 @@ img{max-width:100%;display:block;}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);color:#374151;background:#fff;}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border);}
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;   /* ocupa toda a largura */
+  z-index: 1000; /* garante que fique acima do conteúdo */
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
 .brand{display:flex;align-items:center;gap:10px;}
 .brand-img{height:40px;width:auto;display:block;}
