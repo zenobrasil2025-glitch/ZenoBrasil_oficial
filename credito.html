@@ -241,6 +241,40 @@ footer a{color:#e2e8f0;}
   height: auto;
   opacity: 0.9;
 }
+
+/* Remove o menu hamburger no mobile e mantém o botão visível */
+@media (max-width: 768px) {
+
+  /* Esconde completamente o menu hamburger */
+  .menu-btn {
+    display: none !important;
+  }
+
+  /* Ajusta o container da navegação */
+  .nav-cta {
+    display: flex;
+    justify-content: center; /* centraliza o botão */
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Garante que o botão "Voltar ao Início" sempre apareça */
+  .nav-cta .btn.primary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1000; /* fica acima de tudo */
+    position: relative;
+  }
+
+  /* Impede que qualquer nav oculta sobreponha o botão */
+  nav, header {
+    overflow: visible;
+  }
+}
+
 </style>  
 </head>
 <body>
@@ -263,8 +297,8 @@ footer a{color:#e2e8f0;}
       <img src="img/LOGOZENO.png" alt="Novos Dados" class="brand-img">
     </a>
     <button class="menu-btn" aria-expanded="false" aria-label="Abrir menu" aria-controls="menu-principal">☰</button>
-    <div class="nav-cta">
-      <a class="btn primary" href="index.html" rel="noopener">Voltar ao Inicío</a>
+   <div class="nav-cta">
+     <a class="btn primary" href="index.html#consultas" rel="noopener">Voltar ao Início</a>
     </div>
   </div>
 </header>
