@@ -241,6 +241,56 @@ footer a{color:#e2e8f0;}
   height: auto;
   opacity: 0.9;
 }
+
+/* Selo dourado */
+.selo-promocao {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(135deg, #eaff00,  #eaff00); /* degradê dourado */
+  color: #2b07bb;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 50px; /* deixa arredondado */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Remove o menu hamburger no mobile e mantém o botão visível */
+@media (max-width: 768px) {
+
+  /* Esconde completamente o menu hamburger */
+  .menu-btn {
+    display: none !important;
+  }
+
+  /* Ajusta o container da navegação */
+  .nav-cta {
+    display: flex;
+    justify-content: center; /* centraliza o botão */
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Garante que o botão "Voltar ao Início" sempre apareça */
+  .nav-cta .btn.primary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1000; /* fica acima de tudo */
+    position: relative;
+  }
+
+  /* Impede que qualquer nav oculta sobreponha o botão */
+  nav, header {
+    overflow: visible;
+  }
+}
+
+
 </style>  
 </head>
 <body>
@@ -264,7 +314,7 @@ footer a{color:#e2e8f0;}
     </a>
     <button class="menu-btn" aria-expanded="false" aria-label="Abrir menu" aria-controls="menu-principal">☰</button>
     <div class="nav-cta">
-      <a class="btn primary" href="index.html" rel="noopener">Voltar ao Inicío</a>
+     <a class="btn primary" href="index.html#consultas" rel="noopener">Voltar ao Início</a>
     </div>
   </div>
 </header>
@@ -308,10 +358,10 @@ footer a{color:#e2e8f0;}
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
       </div>
        <div class="card cp destaque">
-        <div class="selo-premium">POPULAR</div>
+        <div class="selo-promocao">PROMOÇÃO 20%</div>
         <h3>(CRV) COD segurança-CRV</h3>
         <p>Código presente no CRV (Certificado de Registro de Veículo)</p>
-        <span class="price-tag">R$ 29,00</span>
+        <span class="price-tag">R$ 23,20</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
       </div>
       <div class="card cp destaque">
@@ -319,6 +369,20 @@ footer a{color:#e2e8f0;}
         <h3>COMUNICADO DE VENDA</h3>
         <p>Serviço que permite comunicar oficialmente a venda do veículo de forma online, garantindo segurança jurídica e evitando futuras responsabilidades sobre o automóvel.</p>
         <span class="price-tag">R$ 26,99</span>
+        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
+      </div>
+      <div class="card cp destaque">
+        <div class="selo-premium">POPULAR</div>
+        <h3>(ATPV-e)SEGUNDA VIA ATPV-e</h3>
+        <p>ATPV-e 2ª via para todos os estados brasileiros.</p>
+        <span class="price-tag">R$ 49,90</span>
+        <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
+      </div>
+      <div class="card cp destaque">
+        <div class="selo-premium">POPULAR</div>
+        <h3>Histórico de Proprietários</h3>
+        <p>Consulta que mostra todos os donos anteriores do veículo.</p>
+        <span class="price-tag">R$ 17,90</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
       </div>
       <div class="card cp">
@@ -354,7 +418,7 @@ footer a{color:#e2e8f0;}
       <div class="card cp">
         <h3>CRLV-e BA</h3>
         <p>Serviço em promoção: 20% OFF aplicado! Certificado de Registro e Licenciamento de Veículo eletrônico, documento digital que comprova a regularidade do veículo.</p>
-        <span class="price-tag">R$ 36,00</span>
+        <span class="price-tag">R$ 50,00</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
       </div>
       <div class="card cp">
