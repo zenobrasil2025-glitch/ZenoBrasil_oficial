@@ -330,7 +330,60 @@ footer a{color:#e2e8f0;}
   
 }
 
+/* Selo dourado */
+.selo-promocao {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(135deg, #eaff00,  #eaff00); /* degradê dourado */
+  color: #2b07bb;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 50px; /* deixa arredondado */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 12px;
+  text-transform: uppercase;
+}
 
+/* Reclame aqui */
+#ra-verified-seal {
+    transform: scale(4.0);
+    transform-origin: top left;
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: -250px;
+}
+
+/* Logo Footer */
+.logo-reclame_aqui {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza a imagem */
+}
+
+.logo-reclame_aqui img {
+  width: 400px; /* ajuste o tamanho */
+  height: auto;
+  border: 5px solid #ff0000; /* cor inicial da borda */
+  border-radius: 20px; /* arredonda as bordas */
+  padding: 5px;
+
+  /* Animação de piscar */
+  animation: piscarBorda 1.5s infinite;
+}
+
+/* Keyframes para piscar a borda */
+@keyframes piscarBorda {
+  0% {
+    border-color: #0066cc;
+  }
+  50% {
+    border-color: #00ff00;
+  }
+  100% {
+    border-color: #0066cc;
+  }
+}
 </style>  
 </head>
 <body>
@@ -373,14 +426,13 @@ footer a{color:#e2e8f0;}
   <div class="container hero-inner hero-grid">
 
     <!-- Imagem -->
-    <div class="hero-img">
-      <img src="img/Modelo.png" alt="Cliente feliz usando Zeno" />
-       <!-- Logo animada -->
-      <div class="logo-wrapper">
-  <img src="img/Icon_zeno.png" alt="Logo Zeno" class="logo-animada">
+    <div class="logo-reclame_aqui">
+  <a href="https://www.reclameaqui.com.br/empresa/zeno-brasil/?utm_source=referral&utm_medium=embbed&utm_campaign=ra_verificada&utm_term=compact_1" 
+     target="_blank" 
+     rel="noopener">
+    <img src="img/Logo_ReclameAqui_vertical2.png" alt="Google Safe Browsing">
+  </a>
 </div>
-
-    </div>
 
     <!-- Texto -->
     <div class="hero-text">
@@ -395,7 +447,6 @@ footer a{color:#e2e8f0;}
     </div>
 
   </div>
-</section>
 
 
   </div>
@@ -464,10 +515,10 @@ footer a{color:#e2e8f0;}
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
       </div>
        <div class="card cp destaque">
-        <div class="selo-premium">POPULAR</div>
+        <div class="selo-promocao">PROMOÇÃO 20%</div>
         <h3>(CRV) COD segurança-CRV</h3>
         <p>Código presente no CRV (Certificado de Registro de Veículo)</p>
-        <span class="price-tag">R$ 29,00</span>
+        <span class="price-tag">R$ 23,20</span>
         <a class="btn primary" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">🔒 Liberar Acesso</a>
       </div>
       <div class="card cp destaque">
