@@ -384,6 +384,292 @@ footer a{color:#e2e8f0;}
     border-color: #0066cc;
   }
 }
+
+.avaliacoes h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .avaliacoes h2 span {
+    color: #8bc34a;
+    font-weight: 700;
+  }
+
+  .avaliacoes h2 strong {
+    color: #007000;
+    font-weight: 700;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    flex: 0 0 300px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  .stars {
+    color: #ffb400;
+    font-size: 1rem;
+  }
+
+  .date {
+    color: #777;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .recomenda {
+    color: #007000;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .recomenda::before {
+    content: "👍";
+    color: #007000;
+  }
+
+  .comentario {
+    color: #444;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    .card {
+      flex: 0 0 80%;
+    }
+    .avaliacoes h2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Alinha visualmente o hero como no protótipo */
+.hero-grid.alinhado {
+  align-items: center;
+}
+
+/* Mascote maior */
+.zeno-img {
+  width: 100%;
+  max-width: 480px; /* aumente conforme necessário */
+  height: auto;
+}
+
+/* Wrapper do mascote com posicionamento relativo */
+.mascote-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+
+/* Selo ReclameAQUI */
+.selo-reclame {
+  position: absolute;
+  bottom: -40px;  /* distância do selo em relação à base da imagem */
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  padding: 6px 10px;
+  animation: pulseSelinho 2s infinite;
+}
+
+.selo-reclame img {
+  height: 50px;
+  width: auto;
+}
+
+/* Animação pulsante */
+@keyframes pulseSelinho {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+
+/* Mobile: ajusta layout e centraliza tudo */
+@media (max-width: 768px) {
+  .hero-grid.alinhado {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .mascote-wrapper {
+    justify-content: center;
+  }
+
+  .selo-reclame {
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* --- ESTILOS GERAIS --- */
+.robo-zeno {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.robo-zeno .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- VÍDEO --- */
+.video-box {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.video-border {
+  padding: 6px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #00c3ff, #00ff95);
+  animation: borderPulse 2s infinite alternate;
+}
+
+@keyframes borderPulse {
+  0% { box-shadow: 0 0 20px #00c3ff; }
+  100% { box-shadow: 0 0 20px #00ff95; }
+}
+
+.video-border video {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+/* --- BOTÃO DE VOLUME --- */
+.volume-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.volume-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* --- TEXTO --- */
+.content {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.content h2 {
+  color: #003399;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.content ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.content ul li::before {
+  content: "✔";
+  color: #00b873;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.content .highlight {
+  color: #00b873;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #00aaff, #00cc66);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  opacity: 0.85;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .robo-zeno .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content ul li {
+    padding-left: 0;
+  }
+  .content ul li::before {
+    display: none;
+  }
+  .video-box {
+    max-width: 90%;
+  }
+}
+
 </style>  
 </head>
 <body>
@@ -423,18 +709,24 @@ footer a{color:#e2e8f0;}
 
 <!-- HERO -->
 <section id="inicio" class="hero">
-  <div class="container hero-inner hero-grid">
+  <div class="container hero-inner hero-grid alinhado">
 
-    <!-- Imagem -->
-    <div class="logo-reclame_aqui">
-  <a href="https://www.reclameaqui.com.br/empresa/zeno-brasil/?utm_source=referral&utm_medium=embbed&utm_campaign=ra_verificada&utm_term=compact_1" 
-     target="_blank" 
-     rel="noopener">
-    <img src="img/Logo_ReclameAqui_vertical2.png" alt="Google Safe Browsing">
-  </a>
-</div>
+    <!-- Coluna da imagem (mascote + selo) -->
+    <div class="hero-img">
+      <div class="mascote-wrapper">
+        <img src="img/Mascote.png" alt="Mascote Zeno" class="zeno-img">
 
-    <!-- Texto -->
+        <!-- Selo ReclameAQUI -->
+        <a href="https://www.reclameaqui.com.br/empresa/zeno-brasil/?utm_source=referral&utm_medium=embbed&utm_campaign=ra_verificada&utm_term=compact_1" 
+           target="_blank" 
+           rel="noopener"
+           class="selo-reclame">
+          <img src="img/Logo_ReclameAqui_Horizontal.png" alt="Verificada por ReclameAQUI">
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna do texto -->
     <div class="hero-text">
       <a href="#" class="ribbon btn-primary">Descubra como usar a Zeno com facilidade.</a>
       <a class="btn outline" href="tutoriais.html" rel="noopener">Assistir Tutoriais</a>
@@ -447,42 +739,40 @@ footer a{color:#e2e8f0;}
     </div>
 
   </div>
-
-
-  </div>
 </section>
 
 
-<!-- BENEFÍCIOS -->
-<section class="benefits">
+
+
+<!-- ROBÔ ZENO NO WHATSAPP -->
+<section class="robo-zeno">
   <div class="container">
-    <h2 class="section-title">Por que escolher a Zeno?</h2>
-    <p class="section-subtitle">Tecnologia, praticidade e segurança para o seu dia a dia.</p>
-
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="icon">💎</div>
-        <h4>Créditos sem prazo</h4>
-        <p>Você usa quando quiser, sem preocupações.</p>
+    <!-- LADO ESQUERDO - VÍDEO -->
+    <div class="video-box">
+      <div class="video-border">
+        <video id="zenoVideo" autoplay muted loop playsinline>
+          <source src="Mov/NOVA PUBLI.mp4" type="video/mp4">
+          Seu navegador não suporta vídeos HTML5.
+        </video>
       </div>
+      <button class="volume-btn" id="toggleVolume">
+        🔇
+      </button>
+    </div>
 
-      <div class="benefit-card">
-        <div class="icon">⚡</div>
-        <h4>Pré-pago transparente</h4>
-        <p>Zero mensalidades e nenhuma taxa escondida.</p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="icon">📲</div>
-        <h4>Consultas pelo WhatsApp</h4>
-        <p>Automação e velocidade na palma da sua mão.</p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="icon">🛡️</div>
-        <h4>Segurança e Confiabilidade</h4>
-        <p>Certificação e Proteção Avançada.</p>
-      </div>
+    <!-- LADO DIREITO - TEXTO -->
+    <div class="content">
+      <h2>ROBÔ ZENO NO WHATSAPP</h2>
+      <ul>
+        <li>Realize consultas diretamente pelo WhatsApp, sem sair do app;</li>
+        <li>Receba relatórios veiculares em segundos;</li>
+        <li>Agilidade, segurança e praticidade para seu negócio;</li>
+        <li>Integração automática com sua conta Zeno.</li>
+      </ul>
+      <p class="highlight">
+        Deixe o robô Zeno cuidar das consultas e surpreenda seus clientes com respostas instantâneas.
+      </p>
+      <a href="#" class="cta-btn">Quero testar agora</a>
     </div>
   </div>
 </section>
@@ -578,33 +868,107 @@ footer a{color:#e2e8f0;}
 </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-<section class="section" id="contato">
-  <div class="container">
-    <div class="head">
-      <h2>Veja como é fácil consultar</h2>
-      <p>Crie sua conta pré-paga, compre créditos e faça consultas pelo sistema mais completo do mercado.</p>
+<section class="avaliacoes">
+  <h2>⭐ Avaliações confiáveis da <span>Zeno Brasil</span> no <strong>ReclameAQUI</strong></h2>
+
+  <div class="carousel" id="carousel">
+    <div class="card">
+      <h3>Lucas Rosa</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Esta avaliação não contém um comentário em texto</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="chip">1</div>
-        <h4>Cadastre-se</h4>
-        <p>Crie sua conta pré-paga. Não possui mensalidade.</p>
-        <a class="btn primary" rel="noopener" href="https://app.zenobrasil.com.br/access/cadastro/default.aspx?info=jVTMXj5NTDS3%2biExICEn4K0tHAR%2bcuPyUYRAdB%2bXZNkiBhfxjE37wQ%3d%3d">Cadastrar</a>
-      </div>
-      <div class="step">
-        <div class="chip">2</div>
-        <h4>Compre créditos</h4>
-        <p>Escolha um valor e aguarde a liberação automática.</p>
-        <!-- Comprar créditos -> WhatsApp -->
-        <a class="btn outline" rel="noopener" href="https://wa.me/553197271899">Comprar créditos</a>
-      </div>
-      <div class="step">
-        <div class="chip">3</div>
-        <h4>Realize as consultas</h4>
-        <p>Acesse sua conta e utilize o sistema quando precisar.</p>
-        <a class="btn outline" rel="noopener" href="https://app.zenobrasil.com.br/">Acessar sistema</a>
-      </div>
+    <div class="card">
+      <h3>Daniel Luis Ferreira</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Ótimo serviço</p>
+    </div>
+    <div class="card">
+      <h3>Luiz Philipe</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Esta avaliação não contém um comentário em texto</p>
+    </div>
+    <div class="card">
+      <h3>Hugo Leonardo</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Pessoal de confiança</p>
+    </div>
+    <div class="card">
+      <h3>Hudson Andre</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Excelência em prestação de serviço, gostei</p>
+    </div>
+    <div class="card">
+      <h3>Joecel Ribeiro</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">A empresa é o sistema tudo 100%, qualquer coisa sempre prontos a ajudar.</p>
+    </div>
+    <div class="card">
+      <h3>Marcos Vinícius Silva</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Atencioso</p>
+    </div>
+    <div class="card">
+      <h3>Francisco Gustavo</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Cumpre o que promete.</p>
+    </div>
+    <div class="card">
+      <h3>Josiel Frazao Profiro</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Top</p>
+    </div>
+    <div class="card">
+      <h3>Sandro Gonçalves Gomes</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">São ótimos</p>
+    </div>
+    <div class="card">
+      <h3>Jonatas Nascimento de Oliveira</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Uma responsabilidade mútua com bastante atenção dos colaboradores</p>
+    </div>
+    <div class="card">
+      <h3>LC Vistoria Veicular</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">11/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Ótimo atendimento!</p>
+    </div>
+    <div class="card">
+      <h3>Helinton Aparecido</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">10/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Muito útil</p>
+    </div>
+    <div class="card">
+      <h3>Alexandre Alves de Barros</h3>
+      <div class="stars">★★★★★</div>
+      <div class="date">10/10/2025</div>
+      <div class="recomenda">Recomenda a empresa</div>
+      <p class="comentario">Esta avaliação não contém um comentário em texto</p>
     </div>
   </div>
 </section>
@@ -851,6 +1215,55 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+</script>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  let scrollAmount = 0;
+
+  function autoScroll() {
+    scrollAmount += 1;
+    if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+      scrollAmount = 0;
+    }
+    carousel.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  let autoSlide = setInterval(autoScroll, 30);
+
+  // Permitir arrastar com mouse/touch
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carousel.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+    clearInterval(autoSlide);
+  });
+  carousel.addEventListener('mouseleave', () => { isDown = false; autoSlide = setInterval(autoScroll, 30); });
+  carousel.addEventListener('mouseup', () => { isDown = false; autoSlide = setInterval(autoScroll, 30); });
+  carousel.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2;
+    carousel.scrollLeft = scrollLeft - walk;
+  });
+</script>
+
+<script>
+const video = document.getElementById('zenoVideo');
+const btn = document.getElementById('toggleVolume');
+
+btn.addEventListener('click', () => {
+  video.muted = !video.muted;
+  btn.textContent = video.muted ? '🔇' : '🔊';
+});
 </script>
 
 <!-- Google Tag Manager (noscript) -->
